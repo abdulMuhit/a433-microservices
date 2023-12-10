@@ -1,6 +1,6 @@
 FROM golang:1.15-alpine
 
-WORKDIR /go/src/github.com/dicodingacademy/karsajobs
+WORKDIR /go/src/github.com/abdulmuhit/karsajobs
 ENV GO111MODULE=on
 ENV APP_PORT=8080
 
