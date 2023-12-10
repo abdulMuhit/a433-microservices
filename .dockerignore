@@ -1,2 +1,8 @@
 # Ignore node_modules directory
 src/node_modules
+
+*.pem
+.env
+
+node_modules/
+public/javascripts/dist/

@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  item-app:
+    image: ghcr.io/abdulmuhit/item-app:v1
+    ports:
+      - "80:8080"  # Melakukan port mapping dari port 80 di host ke port 8080 di container
+    depends_on:
+      - item-db  # Menunggu hingga item-db selesai diluncurkan
+    restart: always  # Kebijakan restart: selalu restart ketika terhenti
+  item-db:
+    image: mongo:3
+    volumes:
+      - app-db:/data/db  # Menggunakan volume bernama app-db untuk penyimpanan data MongoDB
+    restart: always  # Kebijakan restart: selalu restart ketika terhenti
+
+volumes:
+  app-db:  # Volume untuk item-db
